@@ -1,0 +1,57 @@
+.cardHolder{
+    
+    margin: 0 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 2rem;
+}
+
+.title{
+    margin: 0 2.5rem 2.5rem ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title h2{
+    color: #424436;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-right: 2rem;
+}
+
+.navButton{
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #DDDDDD;
+    border-radius: 0.4rem;
+    text-wrap: nowrap;
+    color:#8B8B8B;
+    font-size: 1rem;
+    font-weight: 500;;
+}
+
+@media(max-width: 1000px){
+    .cardHolder{
+        margin: 0 1rem;
+        gap: 1rem;
+    }
+    .title{
+        margin: 0 1rem 1rem
+    }
+}
+@media(max-width: 768px){
+    .cardHolder{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media(max-width: 480px){
+    .cardHolder{
+        grid-template-columns: 1fr;
+    }
+    .title h2{
+        font-size: 3rem;
+    }
+}

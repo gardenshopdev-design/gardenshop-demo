@@ -1,0 +1,114 @@
+.container{
+    padding: 2.5rem;
+    display: flex;
+    width: 100%;
+}
+
+.productImg{
+    border: 1px solid #DDDDDD;
+    border-radius: 1rem;
+    background-size: cover; /* Масштабирует картинку так, чтобы она покрывала весь div */
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+.info{
+    padding-left: 2.5rem;
+    width: 548px;
+}
+.info h2{
+    font-size: 2.5rem;
+    color:#424436;
+    margin-bottom: 1rem;
+}
+
+.priceBox{
+    display: flex;
+}
+.dprice{
+    font-size: 4rem;
+    font-weight: 600;
+    color: #424436;
+}
+
+.price{
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-decoration: line-through;
+    /* text-align:justify; */
+    color: #8B8B8B;
+    margin-left: 1rem;
+}
+.salePercent{
+    background-color: #F26D22;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+    color: white;
+    font-weight: 600;
+    width:fit-content;
+    border-radius: 0.3rem;
+    height: fit-content;
+    margin-left: 2rem;
+
+    /* border: 1px solid rgba(0,0,0,0.2); */
+    
+}
+.quantityBox button{
+    width: 3.625rem;
+    height: 3.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 2.5rem;
+    color: #8B8B8B;
+    border: 1px solid #DDDDDD; 
+    border-radius: 0.3rem;
+    /* text-align: center; */
+    line-height: 0;
+    margin: -1px;
+    cursor: pointer;
+}
+
+
+
+.quantityBox{
+        background-color: white; 
+        border: 1px solid #DDDDDD;
+        width:fit-content;
+        border-radius: 0.3rem;
+        display: flex;
+        margin-right: 2rem;
+        
+}
+.controls{
+    display:flex;
+    margin-bottom: 2rem;
+}
+.quantity{
+    font-size: 1.25rem;
+    color:#424436;
+    width: 5rem;
+    height: 3.625rem - 2px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.addToCart{
+    width: 100%;
+    color: white;
+    background-color: #92A134;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    height: 3.625rem;
+    cursor: pointer;
+}
+
+.description{
+    color:#424436;
+}

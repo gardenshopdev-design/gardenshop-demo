@@ -1,0 +1,102 @@
+.formContainer{
+    background: linear-gradient(90deg,#87933D,#55610B);
+    border-radius: 1rem;
+    /* padding-right: 2rem; */
+    padding-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.h2{
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 2rem ;
+    text-align: center;
+}
+
+.innerContainer{
+   
+    display: flex;
+    /* убираем контент влево, а не вправо */
+    
+    justify-content: flex-end; 
+    /*  */
+    overflow: hidden;
+}
+
+.hands{
+    flex:none;
+    overflow: hidden;
+    width: 46.75rem;
+    height: 22.5rem;
+}
+
+.form{
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     justify-content: center;
+     /* padding-left: 1rem; */
+     min-width: 17.5rem;
+     margin: 2rem;
+
+}
+
+.discountInput{
+    
+    font-size: 1.25rem;
+    width: 100%;
+    height: 3.625rem;
+    border: 1px solid white;
+    border-radius: 0.375rem;
+
+    color: white;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    background-color: transparent;
+}
+
+.discountInput::placeholder{
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+.discountButton{
+    font-size: 1.25rem;
+    width: 100%;
+    height: 3.625rem;
+    border: 1px solid white;
+    border-radius: 0.375rem;
+
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #424436;
+    background-color: #FFFFF1;
+}
+
+@media (max-width: 1000px) {
+    .formContainer{
+        margin: 1rem;
+       
+    }
+    .form{
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .innerContainer{
+        flex-direction: column-reverse;
+        
+        /* align-items: center; */
+    }
+
+}
+@media (max-width: 480px) {
+    .h2{
+        font-size: 2.5rem;
+    }
+
+}
+

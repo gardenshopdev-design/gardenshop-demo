@@ -1,0 +1,88 @@
+
+.container{
+    overflow: hidden;
+    width: 100%;
+    /* max-width: 19.75rem; */
+    height: 26.375rem;
+    border: 1px solid #DDDDDD;
+    border-radius: 1rem;
+    position: relative;
+    background-color: white;
+    
+}
+
+.productImg{
+    /* background-clip: padding-box; */
+    background-size: cover; /* Масштабирует картинку так, чтобы она покрывала весь div */
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat; 
+    height: 17.75rem;
+    background-position: center;
+    
+}
+
+.dprice{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #424436;
+}
+
+.price{
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-decoration: line-through;
+    /* text-align:justify; */
+    color: #8B8B8B;
+    margin-left: 1rem;
+}
+
+.productInfo{
+    border-top: 1px solid #DDDDDD;
+    padding:1rem 2rem;
+}
+
+.salePercent{
+    background-color: #F26D22;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+    color: white;
+    font-weight: 600;
+    width:fit-content;
+    border-radius: 0.3rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    /* border: 1px solid rgba(0,0,0,0.2); */
+    
+}
+
+.addToCart{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    width: 90%;
+    height: 3.675rem;
+    background-color: #F26D22;
+    border-radius: 0.5rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 1.25rem;
+    font-weight: 600;;
+
+}
+
+.container:hover .addToCart{
+    opacity: 1;
+}
+
+.addToCart:active{
+    background-color:#424436 ;
+}
+
+
+

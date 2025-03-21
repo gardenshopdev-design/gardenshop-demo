@@ -1,0 +1,178 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 1rem;
+}
+
+.errorBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 100%;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+.four {
+  width: 10rem;
+  max-width: 25%;
+  height: auto;
+}
+
+.cactus {
+  width: 14rem;
+  max-width: 35%;
+  height: auto;
+  margin: 0 1rem;
+}
+
+.errorText {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #282828;
+  margin-top: 1rem;
+}
+
+.errorDescription {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #8b8b8b;
+  max-width: 80%;
+}
+
+.goHome {
+  margin-top: 1.5rem;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  background-color: #92a134;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.goHome:hover {
+  background-color: #7d8e28;
+}
+
+/* Адаптивные стили */
+/* При меньших экранах делаем сетку */
+/* Экран 1000px */
+@media (max-width: 62.5rem) {
+  .four {
+    width: 8rem;
+    max-width: 20%;
+  }
+
+  .cactus {
+    width: 12rem;
+    max-width: 30%;
+  }
+
+  .errorText {
+    font-size: 3.5rem;
+  }
+  
+  .errorDescription {
+    font-size: 1.125rem;
+    max-width: 70%;
+  }
+
+  .goHome {
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Экран 768px */
+@media (max-width: 48rem) {
+  .errorBlock {
+    flex-wrap: wrap;
+    flex-direction: column; /* Перестраиваем элементы в колонку */
+  }
+
+  .four {
+    width: 7rem;
+    max-width: 30%;
+  }
+
+  .cactus {
+    width: 10rem;
+    max-width: 40%;
+    margin: 0.5rem 0;
+  }
+  
+  .errorText {
+    font-size: 2.5rem;
+  }
+  
+  .errorDescription {
+    font-size: 1rem;
+    max-width: 60%;
+  }
+
+  .goHome {
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Экран 480px */
+@media (max-width: 30rem) {
+  .errorBlock {
+    flex-direction: column; 
+  }
+
+  .four {
+    width: 6rem;
+  }
+
+  .cactus {
+    width: 8rem;
+  }
+  
+  .errorText {
+    font-size: 2rem;
+  }
+  
+  .errorDescription {
+    font-size: 0.875rem;
+    max-width: 70%;
+  }
+
+  .goHome {
+    padding: 0.6rem 1.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Экран 360px */
+@media (max-width: 22.5rem) {
+  .errorText {
+    font-size: 1.8rem;
+  }
+  
+  .errorDescription {
+    font-size: 0.8rem;
+    max-width: 80%;
+  }
+
+  .four {
+    width: 5rem;
+  }
+
+  .cactus {
+    width: 7rem;
+  }
+
+  .goHome {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8rem;
+  }
+}

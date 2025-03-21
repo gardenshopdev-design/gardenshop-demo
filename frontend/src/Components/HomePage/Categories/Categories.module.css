@@ -1,0 +1,129 @@
+.categoriesContainer {
+  max-width: 130rem;
+    margin: 0 auto;
+    display: flex; /* Используем Flexbox для компоновки */
+    padding: 1.25rem; /* 20px */
+    flex-wrap: wrap; /* Позволяем изображениям переноситься на новую строку flex-wrap: wrap; позволяет элементам переноситься на следующую строку. Это особенно полезно для адаптивного дизайна, когда ширина экрана может изменяться (например, на мобильных устройствах).*/
+  }
+ 
+.categoriesContent {
+  max-width: 1360px; /* Максимальная ширина контента */
+  margin: 0 auto;
+}
+
+.categoriesHeader {
+  display: flex;
+  align-items: center; /* Центрируем элементы по вертикали */
+  margin-bottom: 10px;
+}
+
+.categoriesTitle {
+  font-weight: 700; /* Changed from 400 to 700 to make the "Categories" title bold */
+  font-size: 64px;
+  margin: 0;
+ 
+  color: #424436;
+}
+
+.separatorLine {
+  flex-grow: 2; /* Позволяет линии занимать оставшееся пространство */
+  height: 2px; /* Высота линии */
+  background-color: lightgray; /* Цвет линии */
+  margin-left: 20px; /* Отступ слева от заголовка */
+  margin-right: 10px; /* Отступ справа от линии */
+}
+
+.allCategoriesButton {
+  font-size: 16px; /* Размер шрифта для кнопки "All Categories" */
+  color:#DDDDDD; /* Цвет текста кнопки */
+  text-decoration: none; /* Убираем подчеркивание */
+  margin-left: 10px; /* Отступ слева от кнопки */
+  align-self: center; /* Центрируем кнопку по вертикали */
+  padding: 5px 10px; /* Отступы внутри кнопки */
+  border: solid; /* Рамка */
+  background: none; /* Убираем фон */
+  cursor: pointer; /* Указатель при наведении */
+}
+
+.allCategoriesButton:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.categoriesImages {
+  display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  justify-content: space-between; /* Распределяем элементы по всей ширине */
+  gap: 20px; /* Отступ между категориями */
+}
+
+.categoriesItem {
+  width: calc(25% - 20px); /* 4 элемента в ряд на больших экранах */
+  height: auto; /* Высота первой категории */
+  text-align: center;
+} 
+
+.categoryLink {
+  text-decoration: none; /* Убираем подчеркивание */
+  color: inherit; /* Унаследуем цвет текста */
+}
+
+.categoriesText {
+  margin: 0 2.5rem 2.5rem ;
+  display: flex;
+  justify-content: center;
+  /* text in center gorizontal */
+  text-align: center;
+  /* text in center vertical */
+  font-weight: 400;
+  /* 400 makes them bold/не яркий текст */
+}
+.imgCategory {
+  width: 100%;
+  height: 24.5rem; /* 392px */
+  object-fit: cover;
+  border-radius: 1rem;
+}
+/* медиа запросы для адаптивности */
+@media (max-width: 1440px) {
+  .categoriesItem {
+    width: calc(33.33% - 20px); /* 3 элемента в ряд на экранах шириной до 1440px */
+    height: 300px; /* Высота для экранов до 1440px */
+  }
+}
+
+@media (max-width: 1000px) {
+  .categoriesItem {
+    width: calc(50% - 20px); /* 2 элемента в ряд на экранах шириной до 1000px */
+    height: 250px; /* Высота для экранов до 1000px */
+  }
+}
+
+@media (max-width: 768px) {
+  .categoriesTitle {
+    font-size: 48px; /* Уменьшаем размер заголовка */
+  }
+
+  .categoriesItem {
+    width: calc(100% - 20px); /* 1 элемент в ряд на экранах шириной до 768px */
+    height: 200px; /* Уменьшаем высоту для меньших экранов */
+  }
+}
+
+@media (max-width: 480px) {
+  .categoriesTitle {
+    font-size: 32px; /* Уменьшаем размер заголовка */
+  }
+
+  .categoriesItem {
+    height: 180px; /* Уменьшаем высоту для экранов до 480px */
+  }
+}
+@media (max-width: 360px) {
+  .categoriesTitle {
+    font-size: 24px; /* Уменьшаем размер заголовка для очень маленьких экранов */
+  }
+
+  .categoriesItem {
+    height: 150px; /* Уменьшаем высоту для экранов до 360px */
+  }
+}

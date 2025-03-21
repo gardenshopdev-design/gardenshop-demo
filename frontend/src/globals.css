@@ -1,0 +1,31 @@
+/* В этом файле находятся ТОЛЬКО глобальные стили. Для неглобалных стилей используйте .module.css */
+/* За пояснениями к Петру */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+.container{
+    max-width: 1440px;
+    margin: auto;
+}
+
+.main{
+    background-color: #FFFFF1;
+}
+
+.pageContent{
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+/* .header-h2{
+    color: #424436;
+    font-size: "4rem";
+    font-weight: "700";
+    margin-right: "2rem";
+} */
+

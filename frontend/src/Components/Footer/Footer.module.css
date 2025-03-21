@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap');
+
+.footer {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+    width: 1440px;
+    height: 948px;
+}
+
+
+.contact {
+    max-width: 130rem; 
+    margin: 0 2.5rem;
+    padding: 1.25rem; /* 20px */
+    font-size: 64px; /* Размер шрифта */
+    color: #424436; /* Цвет текста */
+    
+}
+/* contact */
+.container {
+    display: grid; /* Использовать сетку */
+    grid-template-columns: repeat(2, 1fr); /* Две равные колонки */
+    grid-template-columns: 780px 548px;
+    grid-template-rows: 150px 194px;
+    gap: 32px;
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+    
+/* contact's containers 4 themselves */
+.info {
+    background-color: #F2F6D3; /* Цвет фона для секции информации */
+    padding: 32px; /* Отступ внутри секции информации */
+    color: #424436; /* Цвет текста */
+    font-weight: 600;
+    /* указывает на толщину символов font-weight */
+    size: 40px;
+    border-radius: 10px;
+    gap:16px;
+}
+
+.p-footer {
+    font-size: 20px; /* Размер шрифта для абзаца */
+}
+
+.h-footer {
+    color: #424436; /* Цвет текста для заголовков */
+    font-size: 40px; /* Размер шрифта для заголовков */
+    margin-top: 16px; /* Отступ сверху */
+}
+
+.socials {
+    margin-top: 16px; /* Отступ сверху для иконок соцсетей */
+}
+
+.socials a {
+    color: #8B8B8B; /* Серый цвет для иконок соцсетей */
+    transition: color 0.3s; /* Эффект перехода для изменения цвета */
+}
+
+.socials a:hover {
+    color: #424436; /* Цвет при наведении */
+}
+
+.socials:not(:last-child) {
+    margin-right: 16px; /* Отступ справа для иконок соцсетей */
+}
+/*  Встраивание карт из Google Maps/Встраивание форм или приложений, которые находятся на других сайтах/встраиваемые фивео это все iframe*/
+iframe {
+    width: 1360px;
+    height: 350px;
+    margin-left: 40px;
+    margin-top: 32px;
+    /* марджин - отступ сверху */
+    border-radius: 14px;
+}
+/* media запросы добавить со старого css */
+@media (max-width: 1440px) {
+    .footer {
+        width: 100%; /* Полная ширина для экранов меньше 1440px */
+    }
+}
+
+@media (max-width: 1000px) {
+    .contact {
+        font-size: 48px; /* Уменьшение размера шрифта */
+        padding-left: 20px; /* Уменьшение отступа */
+    }
+
+    .container {
+        grid-template-columns: 1fr; /* Одна колонка */
+        padding: 0 20px; /* Уменьшение отступов по бокам */
+    }
+
+    .info {
+        height: auto; /* Позволить высоте изменяться в зависимости от содержимого */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        font-size: 36px; /* Уменьшение размера шрифта */
+    }
+
+    .info {
+        font-size: 18px; /* Уменьшение размера шрифта */
+    }
+
+    .h-footer {
+        font-size: 32px; /* Уменьшение размера шрифта заголовков
+        }
+
+    .socials a {
+        font-size: 16px; /* Уменьшение размера шрифта для иконок соцсетей */
+    }
+
+    iframe {
+        height: 250px; /* Уменьшение высоты iframe */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        font-size: 28px; /* Уменьшение размера шрифта */
+        padding-left: 10px; /* Уменьшение отступа */
+    }
+
+    .info {
+        font-size: 16px; /* Уменьшение размера шрифта */
+        padding: 20px; /* Уменьшение отступов внутри блока информации */
+    }
+
+    .h-footer {
+        font-size: 24px; /* Уменьшение размера шрифта заголовков */
+    }
+
+    .socials a {
+        font-size: 14px; /* Уменьшение размера шрифта для иконок соцсетей */
+    }
+
+    iframe {
+        height: 200px; /* Уменьшение высоты iframe */
+    }
+}
+
+@media (max-width: 360px) {
+    .contact {
+        font-size: 24px; /* Уменьшение размера шрифта */
+        padding-left: 5px; /* Уменьшение отступа */
+    }
+
+    .info {
+        font-size: 14px; /* Уменьшение размера шрифта */
+        padding: 15px; /* Уменьшение отступов внутри блока информации */
+    }
+
+    .h-footer {
+        font-size: 20px; /* Уменьшение размера шрифта заголовков */
+    }
+
+    .socials a {
+        font-size: 12px; /* Уменьшение размера шрифта для иконок соцсетей */
+    }
+
+    iframe {
+        height: 150px; /* Уменьшение высоты iframe */
+    }
+}

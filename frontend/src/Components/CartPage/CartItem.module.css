@@ -1,0 +1,154 @@
+.dprice{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #424436;
+}
+
+.price{
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-decoration: line-through;
+    /* text-align:justify; */
+    color: #8B8B8B;
+    margin-left: 1rem;
+}
+
+.productImg{
+    /* background-clip: padding-box; */
+    background-size: cover; /* Масштабирует картинку так, чтобы она покрывала весь div */
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat; 
+    /* height: 17.75rem; */
+    background-position: center;
+    border: 1px solid #DDDDDD;
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+    
+}
+
+.itemCard{
+    display: flex;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.itemCard button{
+    width: 3.625rem;
+    height: 3.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 2.5rem;
+    color: #8B8B8B;
+    border: 1px solid #DDDDDD; 
+    border-radius: 0.3rem;
+    /* text-align: center; */
+    line-height: 0;
+    margin: -1px;
+    cursor: pointer;
+}
+
+.controls{
+    display: flex;
+    ;
+}
+
+.quantityBox{
+        background-color: white; 
+        border: 1px solid #DDDDDD;
+        width:fit-content;
+        border-radius: 0.3rem;
+        display: flex;
+        margin-right: 2rem;
+        
+}
+
+.quantity{
+    font-size: 1.25rem;
+    color:#282828;
+    width: 5rem;
+    height: 3.625rem - 2px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.info{
+    padding: 1.875rem;
+    background-color: white;
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #DDDDDD;
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.info h3{
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #424436;
+    margin-bottom: 1.875rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex:1;
+    min-width: 0;
+    max-width: 90%;
+}
+
+.cross{
+    font-size: 3rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 1.8rem;
+    cursor: pointer;
+    color:#424436
+}
+
+
+@media(max-width: 1250px){
+    .controls{
+        display: block;
+    }
+    .quantityBox{
+        margin-bottom: 1rem;
+    }
+}
+
+@media(max-width: 1000px){
+    .controls{
+        display: flex;
+    }
+    
+}
+@media(max-width: 768px){
+    .controls{
+        display: block;
+    }
+    .quantity{
+        width: 3rem;
+    }
+    .info{
+        padding: 1rem;
+    }
+    .cross{
+        top: 0rem;
+        right:0.5rem;
+    }
+    .info h3{
+        margin-bottom: 1rem;
+    }
+    .info .quantityBox{
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+}

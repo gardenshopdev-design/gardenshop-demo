@@ -1,0 +1,72 @@
+.h2{
+    color: #424436;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-right: 2rem;
+    margin-left: 2.5rem;
+}
+
+.filterBox{
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    color: #424436;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2rem 2.5rem;
+}
+
+.price{
+    width:fit-content;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.priceInput{
+    width: 7rem;
+    height: 2.125rem;
+    padding: 0.5rem;
+}
+
+
+.filterBox input, select {
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    border-radius: 0.3rem;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5); /* Увеличивает чекбокс в 1.5 раза */
+    margin-left: 1rem; 
+    border: none;
+  }
+  
+.sort{
+    width: 12.5rem;
+    height: 2.125rem;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color:#424436;
+    margin-left: 1rem;
+
+}
+
+@media(max-width: 768px){
+    .filterBox{
+        display:flex;
+        flex-direction: column;
+        gap: 1rem;;
+        align-items: baseline;
+        margin: 1rem;
+    }
+    .h2{
+        margin: 1rem;
+        font-size: 3rem;
+    }
+}
+
+
+
+

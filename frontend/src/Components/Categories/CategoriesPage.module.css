@@ -1,0 +1,143 @@
+.container {  
+  max-width: 85rem; /* 1360px */  
+  margin: 0 auto;  
+}  
+
+/* Заголовок */  
+.categoryTitle {  
+  font-size: 4rem; /* 64px */  
+  font-weight: 700;  
+  line-height: 4.375rem; /* 70px */  
+  color: #424436;  
+  margin-bottom: 2.5rem; /* 40px */  
+}
+
+/* Сетка товаров */
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem; /* ~32px между карточками */
+  justify-content: center;
+}
+
+
+.categoriesRow {  
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;                            /* было 16px исправлено на 32px*/  
+  justify-content: center;  
+}  
+
+/* Оформление одной карточки категории */  
+.categoryCard {  
+  position: relative;  
+  width: 100%;  
+  height: 24.5rem; /* 392px */  
+  overflow: hidden;  
+  border: 1px solid #DDDDDD; /* 1px */  
+  border-radius: 0.625rem; /* 10px */  
+  background-color: #fff;  
+  text-decoration: none;  
+  color: inherit;  
+  transition: transform 0.3s, box-shadow 0.3s;  
+  cursor: pointer;  
+}  
+
+/* Ховер-эффект */  
+.categoryCard:hover {  
+  transform: scale(1.05);  
+  box-shadow: 0rem 0.75rem 1.125rem rgba(0, 0, 0, 0.2); /* 0px 12px 18px */  
+}  
+
+/* Верхняя часть (картинка) */  
+.categoryCardImg {  
+  width: 100%;  
+  height: 21.875rem; /* 350px */  
+  background-size: cover;  
+  background-position: center;  
+  border-top-left-radius: 0.625rem; /* 10px */  
+  border-top-right-radius: 0.625rem;  
+  transition: transform 0.3s;  
+}  
+
+.categoryCard:hover .categoryCardImg {  
+  transform: scale(1.07);  
+}  
+
+/* Нижняя часть (название) */  
+.categoryInfo {  
+  width: 100%;  
+  height: 2.625rem; /* 42px */  
+  border-top: 0.0625rem solid #DDDDDD; /* 1px */  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  text-align: center;  
+  padding: 0.625rem; /* 10px */  
+}  
+
+.categoryInfo h3 {  
+  font-size: 1.125rem; /* 18px */  
+  font-weight: 500;  
+  color: #424436;  
+  margin: 0;  
+  overflow: hidden;  
+  text-overflow: ellipsis;  
+  white-space: nowrap;  
+}  
+
+/* Категорийный баннер */  
+.categoryBanner {  
+  width: 100%;  
+  height: 24.5rem; /* 392px */  
+  object-fit: cover;  
+  border-radius: 1rem;  
+}  
+
+/* ===== Адаптивные стили ===== */
+
+/* Экран 1000px – 3 колонки */  
+@media (max-width: 62.5rem) {  
+  .categoriesRow {  
+    grid-template-columns: repeat(3, 1fr);
+  }  
+}  
+
+/* Экран 768px – 2 колонки */  
+@media (max-width: 48rem) {  
+  .categoriesRow {  
+    grid-template-columns: repeat(2, 1fr);
+  }  
+}  
+
+/* Экран 480px – 2 колонки, но меньше карточки */  
+@media (max-width: 30rem) {  
+  .categoriesRow {  
+    grid-template-columns: repeat(2, 1fr);
+  }  
+  .categoryCard {  
+    height: 18rem;
+  }  
+  .categoryCardImg {  
+    height: 15rem;
+  }  
+  .categoryInfo {  
+    height: 3rem;
+  }  
+}  
+
+/* Экран 360px – 1 колонка */  
+@media (max-width: 22.5rem) {  
+  .categoriesRow {  
+    grid-template-columns: repeat(1, 1fr);
+  }  
+  .categoryCard {  
+    height: 16rem;
+  }  
+  .categoryCardImg {  
+    height: 13rem;
+  }  
+  .categoryInfo {  
+    height: 3rem;
+  }  
+}  
