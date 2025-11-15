@@ -1,7 +1,7 @@
 .dprice{
     font-size: 2.5rem;
     font-weight: 600;
-    color: #424436;
+    color: var(--text);
 }
 
 .price{
@@ -14,16 +14,14 @@
 }
 
 .productImg{
-    /* background-clip: padding-box; */
-    background-size: cover; /* Масштабирует картинку так, чтобы она покрывала весь div */
-    background-position: center; /* Центрирует изображение */
+    background-size: cover; 
+    background-position: center; 
     background-repeat: no-repeat; 
     /* height: 17.75rem; */
     background-position: center;
-    border: 1px solid #DDDDDD;
+    border: 1px solid var(--divider);
     border-top-left-radius: 0.8rem;
-    border-bottom-left-radius: 0.8rem;
-    
+    border-bottom-left-radius: 0.8rem;   
 }
 
 .itemCard{
@@ -80,10 +78,10 @@
 
 .info{
     padding: 1.875rem;
-    background-color: white;
+    background-color: var(--card);
     width: 100%;
     min-width: 0;
-    border: 1px solid #DDDDDD;
+    border: 1px solid var(--divider);
     border-top-right-radius: 0.8rem;
     border-bottom-right-radius: 0.8rem;
     border-left: none;
@@ -95,7 +93,7 @@
 .info h3{
     font-size: 1.25rem;
     font-weight: 500;
-    color: #424436;
+    color: var(--text);
     margin-bottom: 1.875rem;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -111,7 +109,7 @@
     top: 0.5rem;
     right: 1.8rem;
     cursor: pointer;
-    color:#424436
+    color: var(--text);
 }
 
 

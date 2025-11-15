@@ -1,124 +1,123 @@
-.header{
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 8rem;
-    font-size: 1.25rem;
-    font-weight: 500;
+/* src/Components/Header/Header.module.css */
 
-    /* background-color: aqua; */
+.header{
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background: var(--bg);
 }
 
-
 .nav{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    width: 32.375rem;
-    
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 32.375rem;
 }
 
 .navLink{
-    text-decoration: none;
-    color:#424436;
+  text-decoration: none;
+  color: var(--text);        
 }
 
 .logo{
-    width: 4.5rem;
-    height: 4.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
 }
 
 .cart{
-    width: 3rem;
-    height: 3rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .counter{
-    position: absolute;
-    color: white;
-    width: 1.625rem;
-    height: 1.625rem;
-    border-radius: 50%;
-    background-color: #92A134;
-    font-size: 0.75rem;
-    text-align: center;
-    padding-top: 0.373rem;
-    top: 0.5rem;
-
+  position: absolute;
+  color: white;
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  font-size: 0.75rem;
+  text-align: center;
+  padding-top: 0.373rem;
+  top: 0.5rem;
 }
 
+.rightArea{
+  display: flex;
+  align-items: center;
+  gap: 1rem;               
+}
 
-/* адаптивность */
 .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 0.5rem;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
 }
 
 .hamburger div {
-    width: 2.5rem;
-    height: 0.25rem;
-    background-color: #424436;
-    border-radius: 2px;
+  width: 2.5rem;
+  height: 0.25rem;
+  background-color: var(--text);
+  border-radius: 2px;
 }
 
-/* Прячем навигацию */
 @media (max-width: 768px) {
-    .header{
-        padding: 0 1rem;
-        height: 6rem;
-    }
-    .nav {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        justify-content: flex-start;
-        gap: 2rem;
-        top: 0;
-        right: 0;
-        background: #FFFFF1;
-        font-size: 1.5rem;
-        height: 100vh;
-        width: 65%;
-        padding: 100px 2rem 2rem 2rem;
-    }
+  .header{
+    padding: 0 1rem;
+    height: 6rem;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    justify-content: flex-start;
+    gap: 2rem;
+    top: 0;
+    right: 0;
+    background: var(--bg);         
+    font-size: 1.5rem;
+    height: 100vh;
+    width: 65%;
+    padding: 100px 2rem 2rem 2rem;
+  }
 
-    .nav.open {
-        display: flex; 
-        
-    }
+  .nav.open { display: flex; }
 
-    .hamburger {
-        display: flex;
-        margin-left: 2rem;
-    }
-
-    nav.open {
-        position: fixed;
-        width: 100%;
-        left: 0;
-        top: 0;
-        background-color: #0000001A;
-        height: 100%;
-        z-index: 100;
-    }
-}
-.hamburgerHolder{
+  .hamburger {
     display: flex;
-    align-items: center;
+    margin-left: 1rem;
+  }
+
+  nav.open {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #0000001A;
+    height: 100%;
+    z-index: 100;
+  }
+}
+
+.hamburgerHolder{
+  display: flex;
+  align-items: center;
 }
 
 .crossBtn {
-    font-size: 8rem;
-    color:#424436;
-    font-weight: 200;
-    position: absolute;
-    top: 2rem;
-    right:2rem;
-    cursor: pointer;
-    width:fit-content;
-    line-height: 4rem;
+  font-size: 8rem;
+  color: var(--text);        
+  font-weight: 200;
+  position: absolute;
+  top: 2rem;
+  right:2rem;
+  cursor: pointer;
+  width:fit-content;
+  line-height: 4rem;
 }

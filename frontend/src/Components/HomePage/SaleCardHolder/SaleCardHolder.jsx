@@ -13,16 +13,16 @@ function SaleCardHolder() {
 				setLoading(true);
 				setError("");
 
-				// Запрос на сервер
+				// Request to the server
 				const response = await fetch(`http://localhost:3333/products/all`);
 				if (!response.ok) {
-					throw new Error(`Ошибка HTTP: ${response.status}`);
+					throw new Error(`Error HTTP: ${response.status}`);
 				}
 
 				const data = await response.json();
 				setItems(data);
 			} catch (err) {
-				setError(err.message || "Произошла ошибка");
+				setError(err.message || "An error has occurred");
 			} finally {
 				setLoading(false);
 			}
@@ -31,8 +31,8 @@ function SaleCardHolder() {
 		fetchItems();
 	}, []);
 
-	if (loading) return <p>Загрузка изображения...</p>;
-	if (error) return <p>Ошибка: {error}</p>;
+	if (loading) return <p>Loading image...</p>;
+	if (error) return <p>Error: {error}</p>;
 	// console.log(items);
 
 	const saleItems = items.filter((item) => item.discont_price !== null);

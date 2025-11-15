@@ -1,70 +1,187 @@
-# Getting Started with Create React App
+# GardenShop – React E-commerce Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**GardenShop** is a small demo storefront built with **React**.  
+It demonstrates how I structure an online shop front end: categories, product listing with filters, product page, and a simple lead/order flow, all with a responsive layout.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Live demo
 
-### `npm start`
+Once deployed, you can place your URL here:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## `https://your-gardenshop-demo-url.vercel.app`
 
-The page will reload when you make changes.\
+---
+
+## What this demo includes
+
+- **Home page**
+  - Hero section with main headline and CTA
+  - Category cards (quick access to product groups)
+  - Promo / sale block
+
+- **Product catalog**
+  - Product grid with price and discount
+  - Basic filtering and/or sorting (depending on loaded data)
+  - Reusable `ProductCard` component
+
+- **Category views**
+  - Product listing for a selected category
+  - Shared layout and styles with the main catalog
+
+- **Product page**
+  - Product details view
+  - Price, discount, description and CTA
+
+- **Lead / order flow**
+  - Simple form for sale coupon and order submission
+  - Requests are sent to the local API (`/sale/send`, `/order/send`)
+
+- **Responsive layout**
+  - Works on desktop, tablet and mobile
+  - Grids, typography and navigation adapt to smaller screens
+
+---
+
+## Tech stack
+
+- **React** (Create React App)
+- **React Router** – routing between pages
+- **React Redux / Redux Toolkit** – state management
+- **Axios** – API/data fetching
+- **CSS modules / component-scoped styles**
+
+---
+
+## Backend API
+
+The project uses a small Node.js API as the backend.  
+You run it locally; it acts as the data source for categories, products, sales and orders. You do **not** need to modify it.
+
+### Installation & run (API)
+
+From the API project directory:
+
+## `npm install`  
+## `npm run dev`
+
+By default, the API is available on your machine, for example at:
+
+## `http://localhost:3333`
+
+### API endpoints
+
+**GET**
+
+- ## `GET /categories/all`  
+  Returns all categories.
+
+- ## `GET /categories/1`  
+  Returns products for category with ID `1` (replace `1` with another ID as needed).
+
+- ## `GET /products/all`  
+  Returns all products.
+
+- ## `GET /products/1`  
+  Returns a single product with ID `1`.
+
+**POST**
+
+- ## `POST /sale/send`  
+  Sends a request for a sale coupon.
+
+- ## `POST /order/send`  
+  Sends an order to the server.
+
+The front-end uses these endpoints to load categories/products and to submit sale/order requests.
+
+---
+
+## Front-end (React app)
+
+The front end is built with **Create React App** and consumes the local API described above.
+
+### Requirements
+
+- Node.js **18+** (recommended)  
+- npm or yarn
+
+### Installation & local development (front end)
+
+From the front-end project directory:
+
+## `npm install`  
+
+Then start the development server:
+
+## `npm start`
+
+By default the app runs at:
+
+## `http://localhost:3000`
+
+Make sure your **API backend is running** before using the app; otherwise category/product requests and forms will fail.
+
+---
+
+## Available scripts
+
+In the front-end project directory you can run:
+
+### Development
+
+Starts the app in development mode:
+
+## `npm start`
+
+The page will reload when you make changes.  
 You may also see any lint errors in the console.
 
-### `npm test`
+### Tests
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in interactive watch mode:
 
-### `npm run build`
+## `npm test`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Production build
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Builds the app for production into the `build` folder:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## `npm run build`
 
-### `npm run eject`
+The build is optimized and minified.  
+The generated files in `build/` can be deployed to any static hosting (and configured to talk to your API).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Eject (advanced)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Copies the build configuration into your project:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## `npm run eject`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> **Note:** this is a one-way operation. Once you `eject`, you cannot go back.  
+> For most small and medium projects there is no need to use this command.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## How I use this project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This repository is a **personal demo project**:
 
-### Code Splitting
+- It shows how I structure a small e-commerce front end in React.
+- It includes a simple local API backend so everything can run on a developer machine.
+- In real client work, I typically:
+  - adapt the layout and styling to the client’s brand,
+  - connect to an existing backend/API or use a similar lightweight API,
+  - provide short video walkthroughs and a simple handover file describing what was changed and where it lives.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Learn more
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Official documentation:
 
-### Making a Progressive Web App
+- **Create React App docs**  
+  ## `https://facebook.github.io/create-react-app/docs/getting-started`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React documentation**  
+  ## `https://reactjs.org/`

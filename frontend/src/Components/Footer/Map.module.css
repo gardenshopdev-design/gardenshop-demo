@@ -1,33 +1,17 @@
-/* Maps.module.css */
+/* Components/Footer/Map.module.css */
 .maps {
   width: 100%;
-  max-width: 1360px; /* Maximum width */
-  height: 350px; /* Default height */
-  margin: 0 auto; /* Center the maps */
+  height: 350px;
 }
 
 .maps iframe {
-  width: 100%; /* Full width of the iframe */
-  height: 100%; /* Full height of the iframe */
-  border: none; /* No border */
-  padding-bottom: 40px; /* Padding below the iframe */
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0.75rem;
+  display: block;
 }
 
-@media (max-width: 1024px) {
-  .maps {
-      height: 300px; /* Height for medium screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .maps {
-      height: 250px; /* Height for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .maps {
-      height: 200px; /* Height for extra small screens */
-  }
-}
-
+@media (max-width: 1000px) { .maps { height: 300px; } }
+@media (max-width: 768px)  { .maps { height: 250px; } }
+@media (max-width: 480px)  { .maps { height: 200px; } }

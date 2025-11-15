@@ -1,0 +1,72 @@
+/* ===== THEME TOKENS (LIGHT) ===== */
+:root {
+  --bg:        #FFFFF1;  
+  --surface:   #FFFFFF; 
+  --card:      #FFFFFF;  
+  --text:      #424436;  
+  --muted:     #8B8B8B;  
+  --accent:    #92A134;  
+  --accent-ct: #FFFFFF;  
+  --divider:   #DDDDDD;   
+  --border:    var(--divider);
+
+  --shadow:         0 6px 12px rgba(0,0,0,.08);
+  --shadow-strong:  0 12px 18px rgba(0,0,0,.20);
+
+  /* */
+  --contact-card: #F2F6D3;
+}
+
+/* ===== THEME TOKENS (DARK) ===== */
+:root[data-theme="dark"],
+body[data-theme="dark"] {
+  --bg:        #111417;
+  --surface:   #1A1F23;
+  --card:      #1E252A;
+  --text:      #E7ECEF;
+  --muted:     #A3A7AC;
+  --accent:    #9BC24A;
+  --accent-ct: #0F120F; 
+  --divider:   #2E363D;
+  --border:    var(--divider);
+
+  --shadow:        0 6px 12px rgba(0,0,0,.30);
+  --shadow-strong: 0 12px 18px rgba(0,0,0,.45);
+
+  --contact-card: #2A2B23; 
+}
+
+/* */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* {
+  transition: background-color .15s linear, color .15s linear, border-color .15s linear;
+}
+
+/* */
+input, select, textarea {
+  background: var(--surface);     
+  color: var(--text);
+  border: 1px solid var(--divider);
+  border-radius: .5rem;
+}
+input::placeholder, textarea::placeholder { color: var(--muted); }
+
+button, .btn {
+  background: var(--accent);
+  color: var(--accent-ct);
+  border: none;
+  border-radius: .5rem;
+}
+
+.card, .panel {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--divider);
+  border-radius: .625rem;
+  box-shadow: var(--shadow);      
+}

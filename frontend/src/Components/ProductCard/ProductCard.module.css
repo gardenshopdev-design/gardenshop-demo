@@ -4,17 +4,17 @@
     width: 100%;
     /* max-width: 19.75rem; */
     height: 26.375rem;
-    border: 1px solid #DDDDDD;
+    border: 1px solid var(--divider);
     border-radius: 1rem;
     position: relative;
-    background-color: white;
+    background-color: var(--card);
     
 }
 
 .productImg{
     /* background-clip: padding-box; */
-    background-size: cover; /* Масштабирует картинку так, чтобы она покрывала весь div */
-    background-position: center; /* Центрирует изображение */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat; 
     height: 17.75rem;
     background-position: center;
@@ -24,7 +24,7 @@
 .dprice{
     font-size: 2.5rem;
     font-weight: 600;
-    color: #424436;
+    color: var(--text);
 }
 
 .price{
@@ -32,12 +32,12 @@
     font-weight: 500;
     text-decoration: line-through;
     /* text-align:justify; */
-    color: #8B8B8B;
+    color: var(--muted);
     margin-left: 1rem;
 }
 
 .productInfo{
-    border-top: 1px solid #DDDDDD;
+    border-top: 1px solid var(--divider);
     padding:1rem 2rem;
 }
 
@@ -51,9 +51,7 @@
     border-radius: 0.3rem;
     position: absolute;
     top: 1rem;
-    right: 1rem;
-    /* border: 1px solid rgba(0,0,0,0.2); */
-    
+    right: 1rem;   
 }
 
 .addToCart{
@@ -65,14 +63,14 @@
     width: 90%;
     height: 3.675rem;
     background-color: #F26D22;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     color: white;
     border: none;
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     font-size: 1.25rem;
-    font-weight: 600;;
+    font-weight: 600;
 
 }
 
@@ -81,8 +79,7 @@
 }
 
 .addToCart:active{
-    background-color:#424436 ;
+    background-color:var(--text) ;
 }
-
 
 

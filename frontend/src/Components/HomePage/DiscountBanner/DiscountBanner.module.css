@@ -18,7 +18,7 @@
 }
 
 .button{
-    background-color: #92A134;
+    background-color: var(--accent);
     font-size: 1.25rem;
     color: white;
     font-weight: 600;
@@ -41,17 +41,5 @@
         font-size: 3.125rem;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 

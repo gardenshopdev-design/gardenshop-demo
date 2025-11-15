@@ -1,7 +1,8 @@
 {
-  "name": "garden-products",
-  "version": "0.1.0",
+  "name": "gardenshop-demo",
+  "version": "1.0.0",
   "private": true,
+  "description": "GardenShop – demo React storefront with categories, filters, product pages and a simple lead form.",
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
     "axios": "^1.7.9",

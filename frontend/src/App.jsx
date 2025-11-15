@@ -6,9 +6,9 @@ import HomePage from "./Components/HomePage/HomePage";
 import AllProductsPage from "./Components/AllProductsPage/AllProductsPage";
 import CartPage from "./Components/CartPage/CartPage";
 import CategoriesPage from "./Components/Categories/CategoriesPage";
-import CategoryProductsPage from "./Components/Categories/CategoryProductsPage";
+import CategoryProductsPage from "./Components/CategoryProductsPage/CategoryProductsPage";
 import NotFoundPage from "./Components/NotFoundPage/NotFoundPage";
-import ProductPage from "./Components/ProductPage/ProductPage";
+
 import Footer from "./Components/Footer/Footer";
 function App() {
 
@@ -24,7 +24,7 @@ function App() {
 						<Route path="/categories" element={<CategoriesPage />} />
            				<Route path="/categories/:id" element={<CategoryProductsPage />} />
            				<Route path="/cart" element={<CartPage />} />
-						<Route path="/products/:id" element={<ProductPage />} />
+						
             			<Route path="*" element={<NotFoundPage />} />
 					</Routes>
 					<Footer/>

@@ -1,0 +1,82 @@
+.container {
+  max-width: 90rem; /* 1440px */
+  margin: 0 auto;
+  padding-left: 2.5rem; /* 40px */
+  padding-right: 2.5rem; /* 40px */
+  font-family: "Montserrat", sans-serif;
+}
+
+.categoryTitle {
+  font-size: 4rem;          /* 64px */
+  font-weight: 700;
+  line-height: 4.375rem;    /* 70px */
+  color: var(--text);
+  margin-bottom: 2.5rem;    /* 40px */
+}
+
+.filterBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.priceInput {
+  width: 7rem;
+  height: 2.125rem;
+  padding: 0.5rem;
+  border: 1px solid var(--divider);
+  border-radius: 0.3rem;
+  background: var(--card);
+}
+
+.checkbox {
+  transform: scale(1.2);
+  accent-color: var(--accent);
+}
+
+.sortSelect {
+  width: 12.5rem;
+  height: 2.125rem;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  border: 1px solid var(--divider);
+  border-radius: 0.3rem;
+  background: var(--card);
+}
+
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .productsList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .productsList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .productsList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 360px) {
+  .productsList {
+    grid-template-columns: 1fr;
+  }
+}

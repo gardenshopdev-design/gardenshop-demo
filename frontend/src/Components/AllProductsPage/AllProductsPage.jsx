@@ -23,18 +23,14 @@ function AllProductsPage({ title = "", discounted = false }) {
 	const { filteredProducts, loading, error } = useSelector(
 		(state) => state.products
 	);
-	useEffect(() => {
-		dispatch(fetchProducts()).then(() => {
-			dispatch(resetSort());
-			dispatch(filterByPrice({ minPrice, maxPrice }));
-			if (onlyDiscounted) dispatch(filterDiscounted());
-		}); // Загружаем товары при монтировании и фильтруем, если нужно
+useEffect(() => {
+  
+  dispatch(fetchProducts());
 
-		return () => {
-			// console.log("unmount", title);
-			dispatch(resetSort()); // Очистка сортировки при размонтировании
-		};
-	}, [dispatch]);
+  return () => {
+    dispatch(resetSort());
+  };
+}, [dispatch]);
 
 	const handleSortChange = (e) => {
 		let value = e.target.value;
@@ -60,37 +56,34 @@ function AllProductsPage({ title = "", discounted = false }) {
 		setSortBy(value);
 	};
 
-	useEffect(() => {
-		dispatch(resetSort());
-		dispatch(filterByPrice({ minPrice, maxPrice }));
-		//console.log(filteredProducts);
+useEffect(() => {
+  
+  dispatch(resetSort());
+  dispatch(filterByPrice({ minPrice, maxPrice }));
+  if (onlyDiscounted) dispatch(filterDiscounted());
 
-		if (onlyDiscounted) {
-			dispatch(filterDiscounted());
-			// console.log('filter disc', filteredProducts);
-		}
-		switch (sortBy) {
-			case "priceAsc":
-				dispatch(sortByPriceAsc());
-				break;
-			case "priceDesc":
-				dispatch(sortByPriceDesc());
-				break;
-			case "titleAsc":
-				dispatch(sortByTitleAsc());
-				break;
-			case "titleDesc":
-				dispatch(sortByTitleDesc());
-				break;
-			case "default":
-				break;
+  
+  switch (sortBy) {
+    case "priceAsc":
+      dispatch(sortByPriceAsc());
+      break;
+    case "priceDesc":
+      dispatch(sortByPriceDesc());
+      break;
+    case "titleAsc":
+      dispatch(sortByTitleAsc());
+      break;
+    case "titleDesc":
+      dispatch(sortByTitleDesc());
+      break;
+    case "default":
+    default:
+      
+      break;
+  }
+}, [sortBy, onlyDiscounted, minPrice, maxPrice, dispatch]);
 
-			default:
-			// dispatch(resetSort());
-		}
-	}, [sortBy, dispatch, onlyDiscounted, minPrice, maxPrice]);
-
-	// console.log(filteredProducts);
+	
 
 	if (loading) return <p>Загрузка товаров...</p>;
 	if (error) return <p>Ошибка: {error}</p>;
@@ -106,7 +99,7 @@ function AllProductsPage({ title = "", discounted = false }) {
 							className={s.priceInput}
 							placeholder="from"
 							type="number"
-							value={minPrice === 0 ? "" : minPrice} // Если 0, то пустая строка
+							value={minPrice === 0 ? "" : minPrice}
 							onChange={(e) => {
 								const value =
 									e.target.value === "" ? 0 : Number(e.target.value);

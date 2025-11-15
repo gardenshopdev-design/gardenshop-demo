@@ -1,5 +1,5 @@
 .h2{
-    color: #424436;
+    color: var(--text);
     font-size: 4rem;
     font-weight: 700;
     margin-right: 2rem;
@@ -10,7 +10,7 @@
     display: inline-flex;
     align-items: center;
     gap: 2rem;
-    color: #424436;
+    color: var(--text);
     font-size: 1.25rem;
     font-weight: 600;
     margin: 2rem 2.5rem;
@@ -31,13 +31,13 @@
 
 
 .filterBox input, select {
-    background-color: white;
-    border: 1px solid #DDDDDD;
+    background-color: var(--card);
+    border: 1px solid var(--divider);
     border-radius: 0.3rem;
 }
 
 input[type="checkbox"] {
-    transform: scale(1.5); /* Увеличивает чекбокс в 1.5 раза */
+    transform: scale(1.5);
     margin-left: 1rem; 
     border: none;
   }
@@ -48,9 +48,9 @@ input[type="checkbox"] {
     padding: 0 0.5rem;
     font-size: 1rem;
     font-weight: 500;
-    color:#424436;
+    color:var(--text);
     margin-left: 1rem;
-
+    background: var(--card);
 }
 
 @media(max-width: 768px){
@@ -66,7 +66,5 @@ input[type="checkbox"] {
         font-size: 3rem;
     }
 }
-
-
 
 

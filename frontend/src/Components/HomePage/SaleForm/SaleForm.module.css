@@ -1,6 +1,6 @@
 .formContainer{
     background: linear-gradient(90deg,#87933D,#55610B);
-    border-radius: 1rem;
+    border-radius: .75rem;
     /* padding-right: 2rem; */
     padding-top: 2rem;
     margin-bottom: 5rem;
@@ -16,7 +16,6 @@
 .innerContainer{
    
     display: flex;
-    /* убираем контент влево, а не вправо */
     
     justify-content: flex-end; 
     /*  */
@@ -71,9 +70,11 @@
 
     margin-top: 1rem;
     font-weight: 600;
-    color: #424436;
-    background-color: #FFFFF1;
+    color: var(--text);
+    background-color: var(--bg);
+        
 }
+
 
 @media (max-width: 1000px) {
     .formContainer{

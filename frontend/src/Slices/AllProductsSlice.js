@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 
-// Асинхронный экшен для загрузки продуктов с сервера
+// Asynchronous action for loading products from the server
 export const fetchProducts = createAsyncThunk(
 	"products/fetchProducts",
 	async (_, { rejectWithValue }) => {
@@ -52,7 +52,7 @@ const productsSlice = createSlice({
 		},
 
 		resetSort: (state) => {
-			state.filteredProducts = [...state.products]; // Сброс к оригинальному массиву
+			state.filteredProducts = [...state.products];
 			//state.sortBy = "default";
 		},
 

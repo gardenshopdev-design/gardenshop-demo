@@ -42,7 +42,7 @@
 .errorDescription {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #8b8b8b;
+  color: var(--muted);
   max-width: 80%;
 }
 
@@ -50,7 +50,7 @@
   margin-top: 1.5rem;
   padding: 1rem 3rem;
   font-size: 1rem;
-  background-color: #92a134;
+  background-color: var(--accent);
   color: white;
   border: none;
   border-radius: 0.3rem;
@@ -61,9 +61,6 @@
   background-color: #7d8e28;
 }
 
-/* Адаптивные стили */
-/* При меньших экранах делаем сетку */
-/* Экран 1000px */
 @media (max-width: 62.5rem) {
   .four {
     width: 8rem;
@@ -90,11 +87,11 @@
   }
 }
 
-/* Экран 768px */
+/* 768px */
 @media (max-width: 48rem) {
   .errorBlock {
     flex-wrap: wrap;
-    flex-direction: column; /* Перестраиваем элементы в колонку */
+    flex-direction: column;
   }
 
   .four {
@@ -123,7 +120,7 @@
   }
 }
 
-/* Экран 480px */
+/* 480px */
 @media (max-width: 30rem) {
   .errorBlock {
     flex-direction: column; 
@@ -152,7 +149,7 @@
   }
 }
 
-/* Экран 360px */
+/*360px */
 @media (max-width: 22.5rem) {
   .errorText {
     font-size: 1.8rem;

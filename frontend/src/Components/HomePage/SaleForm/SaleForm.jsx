@@ -13,7 +13,7 @@ function SaleForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // обработка формы
+        console.log("Form Data:", { name, phone, email });
 
         e.target.reset();
         setName('');

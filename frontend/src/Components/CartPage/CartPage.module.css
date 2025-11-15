@@ -7,8 +7,8 @@
 }
 
 .title h2{
-    wrap: nowrap;
-    color: #424436;
+    text-wrap: nowrap;
+    color: var(--text);
     font-size: 4rem;
     font-weight: 700;
     margin-right: 2rem;
@@ -18,7 +18,7 @@
     cursor: pointer;
     padding: 0.5rem 1rem;
     background-color: transparent;
-    border: 1px solid #DDDDDD;
+    border: 1px solid var(--divider);
     border-radius: 0.4rem;
     text-wrap: nowrap;
     color:#8B8B8B;
@@ -35,7 +35,7 @@
 }
 
 .form{
-    background-color: #F2F6D3;
+    background-color: var(--panel);
     flex-shrink: 0;
     width: 34.25rem;
    
@@ -54,29 +54,29 @@
 .form h1{
     font-size: 4rem;
     font-weight: 700;
-    color:#424436;;
+    color:var(--text);;
 }
 .form h2{
     font-size: 2.5rem;
     font-weight: 700;
-    color:#424436;;
+    color:var(--text);;
     margin-bottom: 1rem
 }
 
 .form input{
-    background-color: white;
-    color:#424436;
+    background-color: var(--card);
+    color:var(--text);
     font-size: 1.25rem;
     font-weight: 500;
     width: 100%;
     padding: 0 2rem;
-    border: 1px solid #DDDDDD;
+    border: 1px solid var(--divider);
     border-radius: 0.3rem;
     height: 3.625rem;
     margin-bottom: 1rem;
 }
 .form button{
-    background-color: #92A134;
+    background-color: var(--accent);
     color: white;
     border-radius: 0.3rem;
     width: 100%;
@@ -111,7 +111,7 @@
 .confirmationCard{
     width: 34.25rem;
     height: fit-content;
-    background-color: #92A134;
+    background-color: var(--accent);
     border-radius: 1rem;
     color: white;
     padding: 1.5rem 5rem 1.5rem 1.5rem;
@@ -140,7 +140,7 @@
 }
 
 .getBackBtn{
-    background-color: #92A134;
+    background-color: var(--accent);
     color: white;
     border-radius: 0.3rem;
     max-width: 19.5rem;

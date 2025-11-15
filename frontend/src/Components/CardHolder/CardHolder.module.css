@@ -15,7 +15,7 @@
 }
 
 .title h2{
-    color: #424436;
+    color: var(--text);
     font-size: 4rem;
     font-weight: 700;
     margin-right: 2rem;
@@ -25,13 +25,14 @@
     cursor: pointer;
     padding: 0.5rem 1rem;
     background-color: transparent;
-    border: 1px solid #DDDDDD;
-    border-radius: 0.4rem;
+    border: 1px solid var(--divider);
+    border-radius: 0.375rem;
     text-wrap: nowrap;
-    color:#8B8B8B;
+    color:var(--text);
     font-size: 1rem;
-    font-weight: 500;;
+    font-weight: 500;
 }
+
 
 @media(max-width: 1000px){
     .cardHolder{

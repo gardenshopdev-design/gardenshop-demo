@@ -11,7 +11,7 @@ const CategoriesPage = () => {
     axios
       .get("http://localhost:3333/categories/all") 
       .then((response) => {
-        console.log("ОТВЕТ API (CategoriesPage):", response.data);
+        
         if (Array.isArray(response.data)) {
           setCategories(response.data);
         } else {
@@ -23,10 +23,10 @@ const CategoriesPage = () => {
 
   return (
     <div className={styles.container}>
-      {/* Заголовок - смотрим макет: ширина 1360px, font-size 64px/700, line-height 70px */}
+      {/* */}
       <h2 className={styles.categoryTitle}>Categories</h2>
 
-      {/* Список карточек */}
+      {/* List of cards */}
       <div className={styles.categoriesRow}>
         {categories.map((cat) => (
           <CategoryCard key={cat.id} category={cat} />
