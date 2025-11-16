@@ -4,10 +4,12 @@ import { addToCart } from "../../Slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
+
 function ProductCard({ item: product }) {
-  
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const goToProductPage = () => {
     navigate(`/products/${product.id}`);
   };
@@ -23,15 +25,13 @@ function ProductCard({ item: product }) {
 
   return (
     <div className={s.container}>
-      {/* */}
       <div
         style={{
-          backgroundImage: `url(http://localhost:3333${product.image})`,
+          backgroundImage: `url(${API_URL}${product.image})`,
           position: "relative",
         }}
         className={s.productImg}
       >
-        {/* */}
         {product.discont_price !== null && (
           <div className={s.salePercent}>
             {"-" +
@@ -46,7 +46,6 @@ function ProductCard({ item: product }) {
         </button>
       </div>
 
-      {/* */}
       <div className={s.productInfo}>
         <h4
           onClick={goToProductPage}
@@ -63,7 +62,6 @@ function ProductCard({ item: product }) {
           {product.title}
         </h4>
 
-        {/* */}
         <div>
           {product.discont_price === null ? (
             <span className={s.dprice}>{"$" + product.price}</span>

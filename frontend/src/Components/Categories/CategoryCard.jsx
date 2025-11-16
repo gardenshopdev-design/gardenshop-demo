@@ -2,19 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import s from "./CategoriesPage.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
+
 function CategoryCard({ category }) {
   return (
     <div className={s.categoryItem}>
-      {/* clickable "picture" */}
       <Link
         to={`/categories/${category.id}`}
         className={s.thumb}
         style={{
-          backgroundImage: `url("http://localhost:3333${category.image}")`,
+          backgroundImage: `url(${API_URL}${category.image})`,
         }}
         aria-label={category.title}
       />
-      {/* separate caption under the image */}
       <p className={s.categoryText}>{category.title}</p>
     </div>
   );

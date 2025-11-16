@@ -4,14 +4,15 @@ import axios from "axios";
 import CategoryCard from "./CategoryCard";
 import styles from "./CategoriesPage.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
+
 const CategoriesPage = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/categories/all") 
+      .get(`${API_URL}/categories/all`)
       .then((response) => {
-        
         if (Array.isArray(response.data)) {
           setCategories(response.data);
         } else {
@@ -23,10 +24,8 @@ const CategoriesPage = () => {
 
   return (
     <div className={styles.container}>
-      {/* */}
       <h2 className={styles.categoryTitle}>Categories</h2>
 
-      {/* List of cards */}
       <div className={styles.categoriesRow}>
         {categories.map((cat) => (
           <CategoryCard key={cat.id} category={cat} />

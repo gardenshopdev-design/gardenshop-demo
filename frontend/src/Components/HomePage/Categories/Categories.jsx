@@ -3,19 +3,20 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./Categories.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
+
 const Categories = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/categories/all")
-      .then(({ data }) => setCategories(data.slice(0, 4)))   // 🆕
+      .get(`${API_URL}/categories/all`)
+      .then(({ data }) => setCategories(data.slice(0, 4)))
       .catch(() => console.error("Error loading categories"));
   }, []);
 
   return (
     <section className={styles.categoriesContainer}>
-      {/* ───────── title ───────── */}
       <header className={styles.categoriesHeader}>
         <h1 className={styles.categoriesTitle}>Categories</h1>
         <div className={styles.separatorLine} />
@@ -24,14 +25,13 @@ const Categories = () => {
         </Link>
       </header>
 
-      {/* ───────── 4 pictures ───────── */}
       <ul className={styles.categoriesImages}>
-        {categories.map(cat => (
+        {categories.map((cat) => (
           <li key={cat.id} className={styles.categoriesItem}>
             <Link to={`/categories/${cat.id}`} className={styles.categoryLink}>
               <img
                 className={styles.imgCategory}
-                src={`http://localhost:3333/${cat.image}`}
+                src={`${API_URL}/${cat.image}`}
                 alt={cat.title}
               />
               <span className={styles.categoriesText}>{cat.title}</span>

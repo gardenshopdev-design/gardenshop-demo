@@ -5,6 +5,8 @@ import axios from "axios";
 import styles from "./CategoryProductsPage.module.css";
 import ProductCard from "../ProductCard/ProductCard";
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
+
 const CategoryProductsPage = () => {
   const { id } = useParams();
 
@@ -15,10 +17,9 @@ const CategoryProductsPage = () => {
   const [priceFilter, setPriceFilter] = useState({ min: "", max: "" });
   const [onlyDiscounts, setOnlyDiscounts] = useState(false);
 
-  /* ---------- FETCH ---------- */
   useEffect(() => {
     axios
-      .get(`http://localhost:3333/categories/${id}`)
+      .get(`${API_URL}/categories/${id}`)
       .then((res) => {
         if (res.data?.category && Array.isArray(res.data?.data)) {
           setCategory(res.data.category);
@@ -28,7 +29,6 @@ const CategoryProductsPage = () => {
       .catch((e) => console.error("API error:", e));
   }, [id]);
 
-  /* ---------- FILTER&SORT ---------- */
   const filtered = products
     .filter((p) => {
       if (onlyDiscounts && !p.oldPrice) return false;
@@ -46,7 +46,6 @@ const CategoryProductsPage = () => {
       return 0;
     });
 
-  /* ---------- UI ---------- */
   return (
     <div className={styles.container}>
       {category && <h2 className={styles.categoryTitle}>{category.title}</h2>}
