@@ -5,7 +5,11 @@ import axios from "axios";
 import styles from "./CategoryProductsPage.module.css";
 import ProductCard from "../ProductCard/ProductCard";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  (typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:3333"
+    : "https://gardenshop-backend.onrender.com");
 
 const CategoryProductsPage = () => {
   const { id } = useParams();

@@ -4,7 +4,11 @@ import axios from "axios";
 import CategoryCard from "./CategoryCard";
 import styles from "./CategoriesPage.module.css";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  (typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:3333"
+    : "https://gardenshop-backend.onrender.com");
 
 const CategoriesPage = () => {
   const [categories, setCategories] = useState([]);

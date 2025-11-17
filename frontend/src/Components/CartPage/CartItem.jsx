@@ -7,7 +7,11 @@ import {
 } from "../../Slices/cartSlice";
 import { useDispatch } from "react-redux";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  (typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:3333"
+    : "https://gardenshop-backend.onrender.com");
 
 function CartItem({ item }) {
   const dispatch = useDispatch();

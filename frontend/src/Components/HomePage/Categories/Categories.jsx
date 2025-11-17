@@ -3,7 +3,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./Categories.module.css";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  (typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:3333"
+    : "https://gardenshop-backend.onrender.com");
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -31,7 +35,7 @@ const Categories = () => {
             <Link to={`/categories/${cat.id}`} className={styles.categoryLink}>
               <img
                 className={styles.imgCategory}
-                src={`${API_URL}/${cat.image}`}
+                src={`${API_URL}${cat.image}`}
                 alt={cat.title}
               />
               <span className={styles.categoriesText}>{cat.title}</span>

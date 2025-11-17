@@ -4,7 +4,11 @@ import { addToCart } from "../../Slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  (typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:3333"
+    : "https://gardenshop-backend.onrender.com");
 
 function ProductCard({ item: product }) {
   const dispatch = useDispatch();
