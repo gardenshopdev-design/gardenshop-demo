@@ -16,6 +16,7 @@ function CartPage() {
   const [errors, setErrors] = useState({});
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
+
   const handleClick = () => {
     navigate("/");
   };
@@ -56,6 +57,14 @@ function CartPage() {
     setShowConfirmation(false);
   };
 
+  const total = cart.reduce((acc, item) => {
+    const effectivePrice =
+      item.discont_price !== null && item.discont_price !== undefined
+        ? item.discont_price
+        : item.price;
+    return acc + effectivePrice * item.quantity;
+  }, 0);
+
   return (
     <div>
       <div className={s.title}>
@@ -71,7 +80,7 @@ function CartPage() {
           Back to the store
         </button>
       </div>
-      {/* If the cart is empty, show the text and button, otherwise - the cart page */}
+
       {cart.length === 0 ? (
         <div className={s.emptyCartContainer}>
           <p className={s.emptyCart}>
@@ -95,6 +104,7 @@ function CartPage() {
               <CartItem item={item} key={item.id} />
             ))}
           </div>
+
           <form className={s.form} onSubmit={handleSubmit}>
             <h2>Order details</h2>
             <p>{cart.length} items</p>
@@ -107,15 +117,9 @@ function CartPage() {
               }}
             >
               <p>Total</p>
-              <h1>
-                $
-                {cart.reduce(
-                  (acc, item) =>
-                    acc + (item.discount_price || item.price) * item.quantity,
-                  0
-                )}
-              </h1>
+              <h1>${total}</h1>
             </span>
+
             {errors.Name && <span className={s.errorMsg}>{errors.Name}</span>}
             <input
               name="Name"
@@ -124,7 +128,10 @@ function CartPage() {
               value={formData.Name}
               onChange={handleChange}
             />
-            {errors.Phone && <span className={s.errorMsg}>{errors.Phone}</span>}
+
+            {errors.Phone && (
+              <span className={s.errorMsg}>{errors.Phone}</span>
+            )}
             <input
               name="Phone"
               type="tel"
@@ -132,7 +139,10 @@ function CartPage() {
               value={formData.Phone}
               onChange={handleChange}
             />
-            {errors.Email && <span className={s.errorMsg}>{errors.Email}</span>}
+
+            {errors.Email && (
+              <span className={s.errorMsg}>{errors.Email}</span>
+            )}
             <input
               name="Email"
               type="email"
@@ -145,15 +155,18 @@ function CartPage() {
           </form>
         </div>
       )}
+
       {showConfirmation && (
         <div className={s.shader}>
           <div className={s.confirmationCard}>
             <span onClick={handleCloseConfirmation}>&times;</span>
             <h3>Congratulations! </h3>
             <p>
-              Your order has been successfully placed on the website. <br />{" "}
+              Your order has been successfully placed on&nbsp;the website.
               <br />
-              A manager will contact you shortly to confirm your order.
+              <br />
+              A&nbsp;manager will contact you shortly to&nbsp;confirm your
+              order.
             </p>
           </div>
         </div>
