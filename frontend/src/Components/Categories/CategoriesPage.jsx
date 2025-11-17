@@ -16,10 +16,10 @@ const CategoriesPage = () => {
         if (Array.isArray(response.data)) {
           setCategories(response.data);
         } else {
-          console.error("Ошибка: Неверный формат:", response.data);
+          console.error("Error: Invalid format:", response.data);
         }
       })
-      .catch((error) => console.error("Ошибка загрузки категорий:", error));
+      .catch((error) => console.error("Error loading categories:", error));
   }, []);
 
   return (

@@ -85,8 +85,8 @@ useEffect(() => {
 
 	
 
-	if (loading) return <p>Загрузка товаров...</p>;
-	if (error) return <p>Ошибка: {error}</p>;
+	if (loading) return <p>Loading products...</p>;
+	if (error) return <p>Error: {error}</p>;
 
 	return (
 		<div>

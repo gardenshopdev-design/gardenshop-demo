@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) =>{
 router.get('/add/:title/:price/:discont_price/:description', (req, res) =>{
     const {title, price, discont_price, description} = req.params;
     Product.create({title, price, discont_price, description, categoryId: 1});
-    res.json(`добавлено`);
+    res.json(`added`);
 })
 
 module.exports = router;
