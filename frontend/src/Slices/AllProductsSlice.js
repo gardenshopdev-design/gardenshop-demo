@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Визначаємо базовий URL API
 const API_URL =
   process.env.REACT_APP_API_URL ||
   (typeof window !== "undefined" && window.location.hostname === "localhost"
@@ -13,11 +12,9 @@ export const fetchProducts = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await fetch(`${API_URL}/products/all`);
-
       if (!response.ok) {
         throw new Error("Error loading products");
       }
-
       const data = await response.json();
       return data;
     } catch (error) {
@@ -39,6 +36,7 @@ const productsSlice = createSlice({
     maxPrice: Infinity,
   },
   reducers: {
+    
     sortByPriceAsc: (state) => {
       state.filteredProducts = [...state.filteredProducts].sort((a, b) => {
         const priceA = a.discont_price ?? a.price;
@@ -73,6 +71,21 @@ const productsSlice = createSlice({
       state.filteredProducts = state.filteredProducts.filter(
         (product) => product.discont_price !== null
       );
+    },
+
+    sortByDiscountDesc: (state) => {
+      state.filteredProducts = [...state.filteredProducts].sort((a, b) => {
+        const discountA =
+          a.discont_price !== null && a.discont_price !== undefined
+            ? (a.price - a.discont_price) / a.price
+            : 0;
+        const discountB =
+          b.discont_price !== null && b.discont_price !== undefined
+            ? (b.price - b.discont_price) / b.price
+            : 0;
+        return discountB - discountA;
+      });
+      state.sortBy = "discountDesc";
     },
 
     sortByTitleAsc: (state) => {
@@ -112,6 +125,7 @@ export const {
   filterDiscounted,
   sortByTitleAsc,
   sortByTitleDesc,
+  sortByDiscountDesc,
 } = productsSlice.actions;
 
 export default productsSlice.reducer;
