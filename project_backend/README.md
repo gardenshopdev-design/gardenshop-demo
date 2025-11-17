@@ -4,6 +4,8 @@ This folder contains a small Node.js/Express API used by the **GardenShop** demo
 It serves product and category data and accepts simple sale/order requests.
 
 You can run it locally and connect it to the React frontend in `frontend/`.
+In the online demo, the frontend talks to a hosted instance of this API;  
+for local development you can run it on `http://localhost:3333` as described below.
 
 ---
 

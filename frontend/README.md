@@ -7,10 +7,8 @@ It demonstrates how I structure an online shop front end: categories, product li
 
 ## Live demo
 
-Once deployed, you can place your URL here:
-
-## `https://your-gardenshop-demo-url.vercel.app`
-
+## Frontend (Vercel): `https://gardenshop-demo.vercel.app`
+## Backend API (for this demo): deployed as a small Node/Express service (Render).
 ---
 
 ## What this demo includes
