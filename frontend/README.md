@@ -183,3 +183,16 @@ Official documentation:
 
 - **React documentation**  
   ## `https://reactjs.org/`
+
+---
+
+## License & demo use
+
+This repository is a personal demo project for my portfolio.
+
+- You are welcome to **clone or fork** it and use parts of the code for learning, experiments or as a starting point for your own non-commercial projects.
+- If you want to use this as a base for a **real commercial shop**, please adapt the design, texts and data to your brand and review the code before going live.
+- All product names, prices, images and discounts in this demo are **test data only** and do not represent real offers.
+
+The code is provided **“as is”**, without any warranty of any kind.  
+I am not liable for any issues or losses if you reuse this demo in your own projects.

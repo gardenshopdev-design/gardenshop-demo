@@ -22,7 +22,7 @@ function CartPage() {
   };
 
   const validate = () => {
-    let newErrors = {};
+    const newErrors = {};
 
     if (formData.Name.trim().length < 2) {
       newErrors.Name = "The name must contain at least 2 letters";
@@ -57,13 +57,32 @@ function CartPage() {
     setShowConfirmation(false);
   };
 
-  const total = cart.reduce((acc, item) => {
-    const effectivePrice =
+  // ---- гроші в центах ----
+  const toCents = (value) => Math.round(Number(value) * 100);
+
+  const formatPriceFromCents = (cents) => {
+    if (!Number.isFinite(cents)) return "0";
+    if (cents % 100 === 0) {
+      return (cents / 100).toFixed(0);
+    }
+    return (cents / 100).toFixed(2);
+  };
+
+  // сумарна сума в центах
+  const totalCents = cart.reduce((acc, item) => {
+    const basePrice = item.price;
+    const discountPrice =
       item.discont_price !== null && item.discont_price !== undefined
         ? item.discont_price
-        : item.price;
-    return acc + effectivePrice * item.quantity;
+        : null;
+
+    const effectivePrice = discountPrice ?? basePrice;
+    const quantity = item.quantity || 1;
+
+    return acc + toCents(effectivePrice) * quantity;
   }, 0);
+
+  const itemsCount = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
 
   return (
     <div>
@@ -87,7 +106,7 @@ function CartPage() {
             Looks like you have no items in your basket currently.
           </p>
           <button className={s.getBackBtn} onClick={handleClick}>
-            Contunue Shopping
+            Continue Shopping
           </button>
         </div>
       ) : (
@@ -107,7 +126,7 @@ function CartPage() {
 
           <form className={s.form} onSubmit={handleSubmit}>
             <h2>Order details</h2>
-            <p>{cart.length} items</p>
+            <p>{itemsCount} items</p>
             <span
               style={{
                 display: "flex",
@@ -117,7 +136,7 @@ function CartPage() {
               }}
             >
               <p>Total</p>
-              <h1>${total}</h1>
+              <h1>${formatPriceFromCents(totalCents)}</h1>
             </span>
 
             {errors.Name && <span className={s.errorMsg}>{errors.Name}</span>}
@@ -160,7 +179,7 @@ function CartPage() {
         <div className={s.shader}>
           <div className={s.confirmationCard}>
             <span onClick={handleCloseConfirmation}>&times;</span>
-            <h3>Congratulations! </h3>
+            <h3>Congratulations!</h3>
             <p>
               Your order has been successfully placed on&nbsp;the website.
               <br />

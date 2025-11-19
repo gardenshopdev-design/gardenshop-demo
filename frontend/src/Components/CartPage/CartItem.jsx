@@ -7,11 +7,7 @@ import {
 } from "../../Slices/cartSlice";
 import { useDispatch } from "react-redux";
 
-const API_URL =
-  process.env.REACT_APP_API_URL ||
-  (typeof window !== "undefined" && window.location.hostname === "localhost"
-    ? "http://localhost:3333"
-    : "https://gardenshop-backend.onrender.com");
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3333";
 
 function CartItem({ item }) {
   const dispatch = useDispatch();
@@ -19,12 +15,38 @@ function CartItem({ item }) {
   const handleDeleteButton = () => {
     dispatch(removeFromCart(item.id));
   };
+
   const handlePlusItem = () => {
     dispatch(increaseQuantity(item.id));
   };
+
   const handleMinusItem = () => {
     dispatch(decreaseQuantity(item.id));
   };
+
+  // ---- робота з грошима в "центах", щоб не було хвостів ----
+  const toCents = (value) => Math.round(Number(value) * 100);
+
+  const formatPriceFromCents = (cents) => {
+    if (!Number.isFinite(cents)) return "0";
+    if (cents % 100 === 0) {
+      return (cents / 100).toFixed(0); // без копійок
+    }
+    return (cents / 100).toFixed(2); // 2 знаки після коми
+  };
+
+  const basePrice = item.price;
+  const discountPrice =
+    item.discont_price !== null && item.discont_price !== undefined
+      ? item.discont_price
+      : null;
+
+  const quantity = item.quantity || 1;
+
+  const effectivePrice = discountPrice ?? basePrice;
+
+  const effectiveCents = toCents(effectivePrice) * quantity;
+  const baseCents = toCents(basePrice) * quantity;
 
   return (
     <div className={s.itemCard}>
@@ -42,19 +64,23 @@ function CartItem({ item }) {
         <div className={s.controls}>
           <div className={s.quantityBox}>
             <button onClick={handleMinusItem}>-</button>
-            <span className={s.quantity}>{item.quantity}</span>
+            <span className={s.quantity}>{quantity}</span>
             <button onClick={handlePlusItem}>+</button>
           </div>
           <div>
-            {item.discont_price === null ? (
-              <span className={s.dprice}>{"$" + item.price * item.quantity}</span>
+            {discountPrice === null ? (
+              // без знижки
+              <span className={s.dprice}>
+                {"$" + formatPriceFromCents(baseCents)}
+              </span>
             ) : (
+              // є знижка
               <>
                 <span className={s.dprice}>
-                  {"$" + item.discont_price * item.quantity}
+                  {"$" + formatPriceFromCents(effectiveCents)}
                 </span>
                 <span className={s.price}>
-                  {"$" + item.price * item.quantity}
+                  {"$" + formatPriceFromCents(baseCents)}
                 </span>
               </>
             )}
